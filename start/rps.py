@@ -58,6 +58,5 @@ while True:
         print("Invalid choice")
 
 
-
 print(f"{name} has {player_wins} wins")
 print(f"Computer has {computer_wins} wins")
