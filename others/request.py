@@ -3,13 +3,11 @@ import requests
 import webbrowser
 window =  Tk()
 
-entry = Entry()
-entry.pack()
-print(entry.get())
+
 window.title("My first Python GUI")
 window.geometry('350x200')
 
-window.mainloop()
+
 query = input("Search here: ")
 
 url = "https://youtube-search9.p.rapidapi.com/snc/{}".format(query)
@@ -21,10 +19,16 @@ headers = {
 
 data = requests.get(url, headers=headers).json()
 
-label = Label(window, text=data)
-
 
 response = data['result']
 
+
 for i in response:
-	print(i['title'])
+
+	t = Text(window,height=5,width=52)
+	l = Label(window,text="{}".format(i['title']))
+	l.config(font =("Courier", 14))
+	l.pack()
+	t.pack()
+
+window.mainloop()
